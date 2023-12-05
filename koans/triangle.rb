@@ -34,9 +34,25 @@ def triangle(a, b, c)
   #puts "#{repeated_sides}"
 
   # Iterate through the sorted hash, apply logic starting from highest and first value the iterator will find.
+
+  # Try to use case switch
+
+  #repeated_sides.each do |k,v|
+  #  return v == 3 ? "equilateral".to_sym : v == 2 ? "isosceles".to_sym : "scalene".to_sym
+  #end
+
   repeated_sides.each do |k,v|
-    return v == 3 ? "equilateral".to_sym : v == 2 ? "isosceles".to_sym : "scalene".to_sym
+    case v
+    when 2
+      return "isosceles".to_sym
+    when 3
+      return "equilateral".to_sym
+    else
+      return "scalene".to_sym
+    end
   end
+
+
 
 end
 
